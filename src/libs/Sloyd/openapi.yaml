@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: Sloyd API
+  description: |
+    Deprecated Sloyd text-to-3D create and edit API.
+
+    This OpenAPI document is manually maintained from Sloyd's public GitBook
+    documentation because Sloyd does not publish a downloadable OpenAPI
+    document. Sloyd's documentation currently says it is not accepting new API
+    clients, but the endpoint contract remains documented.
+  version: "1.0.0"
+servers:
+  - url: https://api.sloyd.ai
+tags:
+  - name: generation
+paths:
+  /create:
+    post:
+      operationId: createObject
+      summary: Create a new 3D object
+      description: Creates a 3D object from a text prompt.
+      tags: [generation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateObjectRequest"
+      responses:
+        "200":
+          description: Generated 3D object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateObjectResponse"
+  /edit:
+    post:
+      operationId: editObject
+      summary: Edit an existing 3D object
+      description: Edits a previously generated object using its InteractionId.
+      tags: [generation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EditObjectRequest"
+      responses:
+        "200":
+          description: Edited 3D object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EditObjectResponse"
+components:
+  schemas:
+    CreateObjectRequest:
+      type: object
+      required: [Prompt, ClientId, ClientSecret]
+      properties:
+        Prompt:
+          type: string
+          description: Description of the requested 3D model.
+        ClientId:
+          type: string
+          description: Sloyd API client identifier.
+        ClientSecret:
+          type: string
+          description: Sloyd API client secret.
+        LOD:
+          type: number
+          format: double
+          minimum: 0.01
+          maximum: 1
+          default: 0.5
+          description: Level of detail. Higher values generate more triangles.
+        AiPromptModifiers:
+          type: string
+          description: Prompt modifier such as recoloring or texturing.
+        ModelOutputType:
+          $ref: "#/components/schemas/ModelOutputType"
+        ResponseEncoding:
+          $ref: "#/components/schemas/ResponseEncoding"
+        ThumbnailPreviewExportType:
+          type: string
+          enum: [png, jpg, webp]
+          description: Optional preview image format.
+        ThumbnailPreviewSizeX:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 16384
+          description: Preview image width in pixels.
+        ThumbnailPreviewSizeY:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 16384
+          description: Preview image height in pixels.
+    EditObjectRequest:
+      allOf:
+        - $ref: "#/components/schemas/CreateObjectRequest"
+        - type: object
+          required: [InteractionId]
+          properties:
+            InteractionId:
+              type: string
+              description: Reference returned by createObject for AI editing.
+    ModelOutputType:
+      type: string
+      default: gltf
+      enum: [gltf, glb, obj, stl, usd, usdz]
+      description: Requested 3D file format.
+    ResponseEncoding:
+      type: string
+      default: json
+      enum: [json, MessagePack, Only3dModelFormatWithoutMetaData]
+      description: Response serialization format.
+    CreateObjectResponse:
+      type: object
+      properties:
+        InteractionId:
+          type: string
+        Name:
+          type: string
+          nullable: true
+        ConfidenceScore:
+          type: number
+          format: double
+        ResponseEncoding:
+          type: string
+        ModelOutputType:
+          type: string
+        ModelData:
+          type: string
+          description: Generated 3D file data.
+        ThumbnailPreviewExportType:
+          type: string
+          nullable: true
+          description: Preview image format, if returned.
+        ThumbnailPreview:
+          type: string
+          nullable: true
+          description: Preview image data, if returned.
+    EditObjectResponse:
+      type: object
+      properties:
+        InteractionId:
+          type: string
+        Name:
+          type: string
+          nullable: true
+        ResponseType:
+          type: string
+          enum: [INFO, WARNING, ERROR]
+        ResponseMessage:
+          type: string
+        ResponseEncoding:
+          type: string
+        ModelOutputType:
+          type: string
+        ModelData:
+          type: string
