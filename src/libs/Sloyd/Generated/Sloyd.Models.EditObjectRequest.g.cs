@@ -29,6 +29,19 @@ namespace Sloyd
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Sloyd.CreateObjectRequest? value)
+        {
+            value = Create;
+            return IsCreate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Sloyd.EditObjectRequestVariant2? EditObjectRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Sloyd
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EditObjectRequestVariant2))]
 #endif
         public bool IsEditObjectRequestVariant2 => EditObjectRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEditObjectRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Sloyd.EditObjectRequestVariant2? value)
+        {
+            value = EditObjectRequestVariant2;
+            return IsEditObjectRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Sloyd
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Sloyd.CreateObjectRequest?, TResult>? create = null,
-            global::System.Func<global::Sloyd.EditObjectRequestVariant2?, TResult>? editObjectRequestVariant2 = null,
+            global::System.Func<global::Sloyd.CreateObjectRequest, TResult>? create = null,
+            global::System.Func<global::Sloyd.EditObjectRequestVariant2, TResult>? editObjectRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Sloyd
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Sloyd.CreateObjectRequest?>? create = null,
-            global::System.Action<global::Sloyd.EditObjectRequestVariant2?>? editObjectRequestVariant2 = null,
+            global::System.Action<global::Sloyd.CreateObjectRequest>? create = null,
+
+            global::System.Action<global::Sloyd.EditObjectRequestVariant2>? editObjectRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreate)
+            {
+                create?.Invoke(Create!);
+            }
+            else if (IsEditObjectRequestVariant2)
+            {
+                editObjectRequestVariant2?.Invoke(EditObjectRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Sloyd.CreateObjectRequest>? create = null,
+            global::System.Action<global::Sloyd.EditObjectRequestVariant2>? editObjectRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
