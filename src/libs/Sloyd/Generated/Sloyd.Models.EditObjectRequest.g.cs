@@ -89,6 +89,11 @@ namespace Sloyd
         /// <summary>
         /// 
         /// </summary>
+        public static EditObjectRequest FromCreate(global::Sloyd.CreateObjectRequest? value) => new EditObjectRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EditObjectRequest(global::Sloyd.EditObjectRequestVariant2 value) => new EditObjectRequest((global::Sloyd.EditObjectRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Sloyd
         {
             EditObjectRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EditObjectRequest FromEditObjectRequestVariant2(global::Sloyd.EditObjectRequestVariant2? value) => new EditObjectRequest(value);
 
         /// <summary>
         /// 
