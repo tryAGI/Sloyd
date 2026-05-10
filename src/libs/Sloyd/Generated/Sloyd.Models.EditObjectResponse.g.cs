@@ -94,5 +94,6 @@ namespace Sloyd
         public EditObjectResponse()
         {
         }
+
     }
 }
