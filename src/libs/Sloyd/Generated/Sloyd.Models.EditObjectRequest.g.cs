@@ -42,6 +42,13 @@ namespace Sloyd
         /// <summary>
         /// 
         /// </summary>
+        public global::Sloyd.CreateObjectRequest PickCreate() => IsCreate
+            ? Create!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Sloyd.EditObjectRequestVariant2? EditObjectRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Sloyd
             value = EditObjectRequestVariant2;
             return IsEditObjectRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Sloyd.EditObjectRequestVariant2 PickEditObjectRequestVariant2() => IsEditObjectRequestVariant2
+            ? EditObjectRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EditObjectRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
