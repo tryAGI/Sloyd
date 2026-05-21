@@ -85,6 +85,7 @@ namespace Sloyd.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Sloyd.CreateObjectRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Sloyd.CreateObjectRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Sloyd.CreateObjectRequest).Name}");
                     create = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -95,9 +96,13 @@ namespace Sloyd.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (create == null && editObjectRequestVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Sloyd.EditObjectRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Sloyd.EditObjectRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Sloyd.EditObjectRequestVariant2).Name}");
                     editObjectRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

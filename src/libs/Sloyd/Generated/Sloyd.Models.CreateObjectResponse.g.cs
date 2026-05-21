@@ -108,5 +108,6 @@ namespace Sloyd
         public CreateObjectResponse()
         {
         }
+
     }
 }

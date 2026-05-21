@@ -42,5 +42,6 @@ namespace Sloyd
         public EditObjectRequestVariant2()
         {
         }
+
     }
 }
