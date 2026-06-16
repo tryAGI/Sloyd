@@ -13,7 +13,7 @@ public partial class Tests
             ? clientSecretValue
             : throw new AssertInconclusiveException("SLOYD_CLIENT_SECRET environment variable is not found.");
 
-        var client = new SloydClient(options: null);
+        var client = new SloydClient();
         
         return client;
     }
