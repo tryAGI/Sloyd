@@ -20,7 +20,7 @@ namespace Sloyd.JsonConverters
                     {
                         return global::Sloyd.ModelOutputTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -4,20 +4,20 @@
 namespace Sloyd
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditObjectResponseResponseType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Info,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

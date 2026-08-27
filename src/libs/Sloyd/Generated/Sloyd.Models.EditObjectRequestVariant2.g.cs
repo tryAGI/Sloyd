@@ -4,7 +4,7 @@
 namespace Sloyd
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EditObjectRequestVariant2
     {
