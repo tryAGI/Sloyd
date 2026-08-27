@@ -5,12 +5,12 @@
 namespace Sloyd
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EditObjectRequest : global::System.IEquatable<EditObjectRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Sloyd.CreateObjectRequest? Create { get; init; }
@@ -19,7 +19,7 @@ namespace Sloyd
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
@@ -27,7 +27,7 @@ namespace Sloyd
         public bool IsCreate => Create != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreate(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Sloyd.CreateObjectRequest PickCreate() => IsCreate
             ? Create!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Sloyd.EditObjectRequestVariant2? EditObjectRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Sloyd
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EditObjectRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Sloyd
         public bool IsEditObjectRequestVariant2 => EditObjectRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEditObjectRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Sloyd.EditObjectRequestVariant2 PickEditObjectRequestVariant2() => IsEditObjectRequestVariant2
             ? EditObjectRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EditObjectRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EditObjectRequest(global::Sloyd.CreateObjectRequest value) => new EditObjectRequest((global::Sloyd.CreateObjectRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Sloyd.CreateObjectRequest?(EditObjectRequest @this) => @this.Create;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditObjectRequest(global::Sloyd.CreateObjectRequest? value)
         {
@@ -101,22 +101,22 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EditObjectRequest FromCreate(global::Sloyd.CreateObjectRequest? value) => new EditObjectRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EditObjectRequest(global::Sloyd.EditObjectRequestVariant2 value) => new EditObjectRequest((global::Sloyd.EditObjectRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Sloyd.EditObjectRequestVariant2?(EditObjectRequest @this) => @this.EditObjectRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditObjectRequest(global::Sloyd.EditObjectRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EditObjectRequest FromEditObjectRequestVariant2(global::Sloyd.EditObjectRequestVariant2? value) => new EditObjectRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditObjectRequest(
             global::Sloyd.CreateObjectRequest? create,
@@ -141,23 +141,23 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EditObjectRequestVariant2 as object ??
-            Create as object 
+            Create as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Create?.ToString() ??
-            EditObjectRequestVariant2?.ToString() 
+            EditObjectRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Sloyd.CreateObjectRequest, TResult>? create = null,
@@ -190,7 +190,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Sloyd.CreateObjectRequest>? create = null,
@@ -214,7 +214,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Sloyd.CreateObjectRequest>? create = null,
@@ -237,7 +237,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EditObjectRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Sloyd.CreateObjectRequest?>.Default.Equals(Create, other.Create) &&
-                global::System.Collections.Generic.EqualityComparer<global::Sloyd.EditObjectRequestVariant2?>.Default.Equals(EditObjectRequestVariant2, other.EditObjectRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Sloyd.EditObjectRequestVariant2?>.Default.Equals(EditObjectRequestVariant2, other.EditObjectRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EditObjectRequest obj1, EditObjectRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EditObjectRequest obj1, EditObjectRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Sloyd
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

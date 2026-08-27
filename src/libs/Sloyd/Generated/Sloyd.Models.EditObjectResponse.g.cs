@@ -4,49 +4,49 @@
 namespace Sloyd
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EditObjectResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("InteractionId")]
         public string? InteractionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("Name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ResponseType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Sloyd.JsonConverters.EditObjectResponseResponseTypeJsonConverter))]
         public global::Sloyd.EditObjectResponseResponseType? ResponseType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ResponseMessage")]
         public string? ResponseMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ResponseEncoding")]
         public string? ResponseEncoding { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ModelOutputType")]
         public string? ModelOutputType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ModelData")]
         public string? ModelData { get; set; }

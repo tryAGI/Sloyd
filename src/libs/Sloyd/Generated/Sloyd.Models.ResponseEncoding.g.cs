@@ -10,15 +10,15 @@ namespace Sloyd
     public enum ResponseEncoding
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessagePack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Only3dModelFormatWithoutMetaData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
     }

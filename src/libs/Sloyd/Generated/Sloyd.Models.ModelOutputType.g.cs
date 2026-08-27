@@ -10,27 +10,27 @@ namespace Sloyd
     public enum ModelOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gltf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Obj,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Usd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Usdz,
     }

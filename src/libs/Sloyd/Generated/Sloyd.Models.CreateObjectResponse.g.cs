@@ -4,36 +4,36 @@
 namespace Sloyd
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateObjectResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("InteractionId")]
         public string? InteractionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("Name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ConfidenceScore")]
         public double? ConfidenceScore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ResponseEncoding")]
         public string? ResponseEncoding { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ModelOutputType")]
         public string? ModelOutputType { get; set; }

@@ -9,15 +9,15 @@ namespace Sloyd
     public enum CreateObjectRequestThumbnailPreviewExportType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }
