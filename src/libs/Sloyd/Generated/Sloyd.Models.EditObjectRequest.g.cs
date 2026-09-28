@@ -42,8 +42,8 @@ namespace Sloyd
         /// <summary>
         ///
         /// </summary>
-        public global::Sloyd.CreateObjectRequest PickCreate() => IsCreate
-            ? Create!
+        public global::Sloyd.CreateObjectRequest PickCreate() => Create is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Sloyd
         /// <summary>
         ///
         /// </summary>
-        public global::Sloyd.EditObjectRequestVariant2 PickEditObjectRequestVariant2() => IsEditObjectRequestVariant2
-            ? EditObjectRequestVariant2!
+        public global::Sloyd.EditObjectRequestVariant2 PickEditObjectRequestVariant2() => EditObjectRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EditObjectRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Sloyd
                 Validate();
             }
 
-            if (IsCreate && create != null)
+            if (Create is { } __value0 && create != null)
             {
-                return create(Create!);
+                return create(__value0);
             }
-            else if (IsEditObjectRequestVariant2 && editObjectRequestVariant2 != null)
+            else if (EditObjectRequestVariant2 is { } __value1 && editObjectRequestVariant2 != null)
             {
-                return editObjectRequestVariant2(EditObjectRequestVariant2!);
+                return editObjectRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Sloyd
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsEditObjectRequestVariant2)
+            else if (EditObjectRequestVariant2 is { } __value1)
             {
-                editObjectRequestVariant2?.Invoke(EditObjectRequestVariant2!);
+                editObjectRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Sloyd
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsEditObjectRequestVariant2)
+            else if (EditObjectRequestVariant2 is { } __value1)
             {
-                editObjectRequestVariant2?.Invoke(EditObjectRequestVariant2!);
+                editObjectRequestVariant2?.Invoke(__value1);
             }
         }
 
